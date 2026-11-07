@@ -1,0 +1,31 @@
+{
+  "name": "accessibility",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:a": "playwright test --project=a",
+    "test:b": "playwright test --project=b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ASharpe-lab/Accessibility.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ASharpe-lab/Accessibility/issues"
+  },
+  "homepage": "https://github.com/ASharpe-lab/Accessibility#readme",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0",
+    "http-server": "^14.1.1"
+  }
+}
