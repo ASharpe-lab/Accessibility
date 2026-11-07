@@ -5,10 +5,11 @@ JavaScript without frameworks. Put all files in the folder I tell you to work in
 
 ## Data
 
-- Load the handbags from a JSON file called `items.json` in the same folder.
+- Copy `items.json` and the `Json-images/` folder from the repo root into the
+  folder you work in, and load the data from there.
 - There are 8 handbags. Each one has: `id`, `name`, `brand`, `year`,
   `country`, `material`, `image`, `alt` and `description`.
-- Images are in the `Json-images/` folder.
+
 
 ## Style
 

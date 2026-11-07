@@ -63,6 +63,7 @@ AA requires 4.5:1 for text and 3:1 for icons and borders.
 Palette:
 - Dark brown: #95865F
 - Light brown: #FAF6DB
+- White: #FFFFFF
 - Dark blue: #1571B3
 - Light blue: #C7F7EF
 - Fucsia: #B31545
@@ -72,24 +73,20 @@ Palette:
 
 | Use | Foreground | Background | Ratio | Passes |
 |---|---|---|---|---|
-| Body text | Black #000000 | Light brown #FAF6DB (page) | 19.27:1 | ✅ |
-| Headings h1, h2 | Fucsia #B31545 | Light brown #FAF6DB | 6.20:1 | ✅ |
-| Links (underlined) | Dark blue #1571B3 | Light brown #FAF6DB | 4.76:1 | ✅ |
+| Body text | Dark brown: #95865F | Light brown #FAF6DB (page) | 19.27:1 | ✅ |
+| Headings h1, h2 | Dark brown: #95865F | Light brown #FAF6DB | 6.20:1 | ✅ |
+| Links (underlined) | Text black: #000000 | Light brown #FAF6DB | 4.76:1 | ✅ |
 | Header and footer text, nav links | Black #000000 | Dark brown #95865F | 5.85:1 | ✅ |
-| Card heading and text | Black #000000 | Light blue #C7F7EF (card) | 17.98:1 | ✅ |
-| Heart icon on card | Fucsia #B31545 | Light blue #C7F7EF | 5.78:1 | ✅ (3:1) |
-| Card border | Dark pink #856A75 | Light brown #FAF6DB | 4.46:1 | ✅ (3:1) |
+| Card|Light brown: #FAF6DB|White: #FFFFFF(card)|---|---|
+| Card heading  | Dark brown: #95865F bold text| White: #FFFFFF(card) |---|---|
+| Card text | Dark brown: #95865F Regular text | White: #FFFFFF(card) |---|---|
+| Heart icon on card | Fucsia #B31545 | Pink: #FFCCD5| 5.78:1 | ✅ (3:1) |
+| Card border | Dark brown: #95865F| Light brown #FAF6DB |---|---|
 | Dialog text | Black #000000 | Light brown #FAF6DB | 19.27:1 | ✅ |
-| Close button text | Light brown #FAF6DB | Dark blue #1571B3 | 4.76:1 | ✅ |
-| Sign up button text | Light brown #FAF6DB | Fucsia #B31545 | 6.20:1 | ✅ |
+| Close button text | Light brown #FAF6DB |Dark brown: #95865F |---|---|
+| Sign up button text | Light brown #FAF6DB | Dark brown: #95865F | 6.20:1 | ✅ |
 | Input border | Dark pink #856A75 | Light brown #FAF6DB | 4.46:1 | ✅ (3:1) |
 | Error text (starts with "Error:") | Fucsia #B31545 | Light brown #FAF6DB | 6.20:1 | ✅ |
-| Success message | Black #000000 | Light blue #C7F7EF | 17.98:1 | ✅ |
+| Success message | Dark brown: #95865F| Light brown: #FAF6DB| 17.98:1 | ✅ |
 | Focus outline (3 px, 2 px offset) | Black #000000 | Light brown / Dark brown / Light blue | 19.27 / 5.85 / 17.98 :1 | ✅ (3:1) |
 
-Colours not used for text:
-- Dark brown on Light brown is 3.29:1, so Dark brown is only used as
-  the header and footer background.
-- Pink is too light for text on any light background.
-  It is only used for decoration (for example, a saved card highlight).
-- Errors are never shown by colour alone: the text starts with "Error:".
