@@ -52,6 +52,9 @@ Follow these rules for every page, component and change.
 ## Touch targets
 - Every button, link and form control is at least 24 × 24 px.
 
-Identify the primary language of the page. Specifying the language of the page helps screen readers and other assistive technologies to read the content correctly. Use the `lang` attribute on the `<html>` tag to set the primary language, e.g., `<html lang="en">` for English.
+## Language and labels
+- Identify the primary language of the page. Specifying the language of the page helps screen readers and other assistive technologies to read the content correctly. Use the `lang` attribute on the `<html>` tag to set the primary language, e.g., `<html lang="en">` for English.
 
-Create form field labels: They should tell us what information to enter or what checkbox to select. Use the `<label>` element and associate it with the corresponding form control using the `for` attribute.
+- Create form field labels: They should tell us what information to enter or what checkbox to select. Use the `<label>` element and associate it with the corresponding form control using the `for` attribute.
+
+When you are done, run the tests and fix what fails.
