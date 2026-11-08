@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luxury Bag Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Post+No+Bills+Jaffna:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="#search">Search</a></li>
+        <li><a href="#details">Details</a></li>
+        <li><a href="#signup">Sign up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <h1>Luxury Bag Finder</h1>
+
+    <section id="search" aria-labelledby="search-heading">
+      <h2 id="search-heading">Search</h2>
+      <div class="search-field">
+        <label for="search-input">Search</label>
+        <input type="search" id="search-input" name="search" autocomplete="off"
+               aria-describedby="search-hint">
+        <p id="search-hint" class="hint">Filter by handbag name or brand.</p>
+      </div>
+      <p id="result-count" class="result-count" role="status" aria-live="polite"></p>
+      <ul id="results" class="results"></ul>
+    </section>
+
+    <section id="details" aria-labelledby="details-heading">
+      <h2 id="details-heading">Details</h2>
+      <p>Select a handbag in the results to see its details.</p>
+
+      <dialog id="details-dialog" class="details-dialog" aria-labelledby="dialog-title">
+        <div class="dialog-body">
+          <h3 id="dialog-title"></h3>
+          <img id="dialog-image" src="" alt="">
+          <dl class="facts">
+            <div><dt>Brand</dt><dd id="dialog-brand"></dd></div>
+            <div><dt>Year</dt><dd id="dialog-year"></dd></div>
+            <div><dt>Country</dt><dd id="dialog-country"></dd></div>
+            <div><dt>Material</dt><dd id="dialog-material"></dd></div>
+          </dl>
+          <p id="dialog-description"></p>
+          <button type="button" id="dialog-close" class="btn btn-primary">Close</button>
+        </div>
+      </dialog>
+    </section>
+
+    <section id="signup" aria-labelledby="signup-heading">
+      <h2 id="signup-heading">Sign up for handbag news</h2>
+      <form id="signup-form" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required
+                 aria-describedby="name-error">
+          <p id="name-error" class="error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required
+                 aria-describedby="email-error">
+          <p id="email-error" class="error" hidden></p>
+        </div>
+
+        <fieldset class="field" id="style-group" aria-describedby="style-error">
+          <legend>Favourite style</legend>
+          <div class="radios">
+            <label><input type="radio" name="style" value="Tote" required> Tote</label>
+            <label><input type="radio" name="style" value="Top handle"> Top handle</label>
+            <label><input type="radio" name="style" value="Shoulder bag"> Shoulder bag</label>
+            <label><input type="radio" name="style" value="Clutch"> Clutch</label>
+          </div>
+          <p id="style-error" class="error" hidden></p>
+        </fieldset>
+
+        <div class="field">
+          <label class="checkbox">
+            <input type="checkbox" id="consent" name="consent" required
+                   aria-describedby="consent-error">
+            I agree to receive emails
+          </label>
+          <p id="consent-error" class="error" hidden></p>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign up</button>
+      </form>
+      <p id="signup-success" class="success" role="status"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Luxury Bag Finder – Student project</p>
+  </footer>
+</body>
+</html>
