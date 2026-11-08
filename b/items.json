@@ -1,0 +1,90 @@
+[
+  {
+    "id": "birkin",
+    "name": "Birkin",
+    "brand": "Hermès",
+    "year": 1984,
+    "country": "France",
+    "material": "Togo leather",
+    "image": "Json-images/birkin.jpeg",
+    "alt": "Orange leather Hermès Birkin bag with a gold padlock",
+    "description": "Named after the actress Jane Birkin, it is handmade by a single artisan and is one of the most sought-after bags in the world."
+  },
+  {
+    "id": "kelly",
+    "name": "Kelly",
+    "brand": "Hermès",
+    "year": 1935,
+    "country": "France",
+    "material": "Calfskin leather",
+    "image": "Json-images/kelly.jpeg",
+    "alt": "Black Hermès Kelly bag with a single top handle and a strap closure",
+    "description": "First made as a travel bag, it took the name of Grace Kelly after she was photographed using it."
+  },
+  {
+    "id": "chanel-255",
+    "name": "2.55",
+    "brand": "Chanel",
+    "year": 1955,
+    "country": "France",
+    "material": "Quilted lambskin",
+    "image": "Json-images/chanel.jpeg",
+    "alt": "Black quilted Chanel 2.55 bag with a chain shoulder strap",
+    "description": "Named after its launch date, February 1955. Coco Chanel added a chain strap so women could keep their hands free."
+  },
+  {
+    "id": "speedy",
+    "name": "Speedy",
+    "brand": "Louis Vuitton",
+    "year": 1930,
+    "country": "France",
+    "material": "Monogram coated canvas",
+    "image": "Json-images/speedy.jpeg",
+    "alt": "Brown Louis Vuitton Speedy bag with the LV monogram pattern",
+    "description": "First made as a travel bag. Audrey Hepburn asked for a smaller version, which made it an everyday classic."
+  },
+  {
+    "id": "lady-dior",
+    "name": "Lady Dior",
+    "brand": "Dior",
+    "year": 1995,
+    "country": "France",
+    "material": "Lambskin with cannage stitching",
+    "image": "Json-images/ladydior.jpeg",
+    "alt": "Black Lady Dior bag with cannage stitching and hanging D-I-O-R charms",
+    "description": "It became famous after Princess Diana carried it so often that Dior renamed it in her honour."
+  },
+  {
+    "id": "jackie",
+    "name": "Jackie",
+    "brand": "Gucci",
+    "year": 1961,
+    "country": "Italy",
+    "material": "Leather and GG canvas",
+    "image": "Json-images/jackie.jpeg",
+    "alt": "Curved Gucci Jackie shoulder bag with a metal piston clasp",
+    "description": "A crescent-shaped shoulder bag named after Jackie Kennedy, who was often photographed carrying it."
+  },
+  {
+    "id": "baguette",
+    "name": "Baguette",
+    "brand": "Fendi",
+    "year": 1997,
+    "country": "Italy",
+    "material": "Leather, fabric or embellished designs",
+    "image": "Json-images/baguette.jpeg",
+    "alt": "Small Fendi Baguette bag with a short strap and the FF buckle",
+    "description": "Designed by Silvia Venturini Fendi to be carried under the arm, like a loaf of French bread."
+  },
+  {
+    "id": "cabat",
+    "name": "Cabat",
+    "brand": "Bottega Veneta",
+    "year": 2001,
+    "country": "Italy",
+    "material": "Woven intrecciato leather",
+    "image": "Json-images/cabat.jpeg",
+    "alt": "Tan Bottega Veneta Cabat tote made of hand-woven leather strips",
+    "description": "A tote woven by hand from leather strips, with no visible logo, a symbol of quiet luxury."
+  }
+]

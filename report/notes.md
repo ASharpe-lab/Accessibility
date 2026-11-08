@@ -67,12 +67,70 @@ Why it is not word for word the same as A:
   That is exactly the effect being measured.
 - "Do not open a/" stops B from copying Project A.
 
+### What the B session did (2026-11-08)
+- It loaded the accessibility skill straight away.
+- It looked at the screenshots and copied items.json and Json-images/ into b/.
+- It did **not** open spec.md. The fence "Use only prompt.md, items.json,
+  Json-images/ and Screenshots/" was stronger than the skill's
+  "Read spec.md before you start".
+- It did **not** run the tests on its own. The skill's last line
+  ("run the tests and fix what fails") was not enough: I had to ask
+  "run the tests against b/".
+- It did not change anything in b/ or tests/ after running the tests.
+
 ### Test results
-(to do)
+
+Command: `npm run test:b`, same tests as A (nothing in tests/ changed).
+
+**First run (by the B agent): 1 failed, 8 passed.**
+- ✘ keyboard › main task with the keyboard only – at the Shift+Tab step
+  (from "Save Birkin" back to "Birkin") focus did not move back.
+  The agent could not make it fail again in 45+ runs.
+
+**My runs (3 times): 0 failed, 9 passed.**
+
+| Test | A | B |
+|---|---|---|
+| keyboard › main task | ✘ | ✓ (✘ once on the first run) |
+| focus-visible › every element reached with Tab | ✘ | ✓ |
+| focus-visible › Close button | ✓ | ✓ |
+| focus-return › Escape | ✓ | ✓ |
+| focus-return › Close button | ✓ | ✓ |
+| focus-return › click + Close | ✓ | ✓ |
+| axe › page load | ✓ | ✓ |
+| axe › dialog open | ✓ | ✓ |
+| axe › form errors shown | ✘ | ✓ |
+| **Failures** | **3** | **0** (1 on first run) |
+
+### Rules from the skill that made a difference
+- **"Each error … starts with 'Error:'"** – A's errors did not, so the
+  axe form-errors test never got to scan. B's errors do, so it passes.
+- **"Focus outline on the element itself"** – A drew the focus ring of
+  the result buttons on `::after`; B puts `:focus-visible { outline: 3px }`
+  on the elements, so the focus-visible test passes.
+
+### Rules from the skill that did NOT work
+- **"Use only the colour pairs in spec.md … do not take colours from
+  screenshots"** – B still uses #1E1E1E (the Figma canvas grey) as the
+  page background, like A. B never read spec.md (see the fence above).
+
+### Work on B after the first build (2026-11-08)
+- Changed only `b/styles.css` so the colours follow spec.md section 5:
+  Light brown page with black text, Fucsia h1/h2, Dark blue links,
+  Dark brown header and footer, Light blue cards with Dark pink borders,
+  Fucsia heart icon, Fucsia "Sign up" button, Dark blue "Close" button,
+  Fucsia "Error:" text, 3 px black focus outline.
+- Removed the Figma grey (#1E1E1E) and #2A2A2A, which are not in the palette.
+- Tests after the change: **9 passed, 0 failed** (2 runs). axe found no
+  serious or critical problems, including colour contrast.
 
 ## What the AI got wrong
 - In the first A session, the agent read spec.md without being asked.
   The comparison would not have been fair, so A had to be rebuilt with a fence.
+- In B the agent followed the fence and ignored the skill's "read spec.md",
+  and it did not run the tests until asked.
+- Both A and B took the page background (#1E1E1E) from the Figma
+  screenshot instead of the palette.
 - The keyboard test finds "Search" by label, and the section with the
   heading "Search" has the same name. Fix it (and explain it) while working on B.
 - Mid-way, the AI changed the tests after seeing A. That breaks the

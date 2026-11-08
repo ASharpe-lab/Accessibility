@@ -1,0 +1,282 @@
+:root {
+  /* Colour pairs from spec.md, section 5 */
+  --bg: #faf6db;      /* Light brown page */
+  --text: #000000;    /* Text black */
+  --dark-brown: #95865f;
+  --light-brown: #faf6db;
+  --dark-blue: #1571b3;
+  --light-blue: #c7f7ef;
+  --fucsia: #b31545;
+  --pink: #ffccd5;
+  --dark-pink: #856a75;
+  --heading-font: "Post No Bills Jaffna", Impact, "Arial Narrow", sans-serif;
+  --body-font: "Inter", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body-font);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+  letter-spacing: 0.02em;
+}
+h1, h2 { color: var(--fucsia); }
+h1 { font-size: 32px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+
+a { color: var(--dark-blue); }
+
+/* Visible focus for every focusable element */
+:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  background: var(--light-brown);
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  z-index: 10;
+}
+.skip-link:focus { top: 1rem; }
+
+/* Header / nav */
+.site-header {
+  background: var(--dark-brown);
+  color: var(--text);
+  padding: 1rem;
+}
+.site-header ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 960px;
+}
+.site-header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  color: var(--text);
+  font-family: var(--heading-font);
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  letter-spacing: 0.04em;
+}
+.site-header nav a:hover { background: var(--light-brown); }
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+main:focus { outline: none; }
+main:focus-visible { outline: 3px solid var(--text); }
+
+section {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--dark-pink);
+  scroll-margin-top: 1rem;
+}
+section:last-child { border-bottom: 0; }
+
+/* Form controls */
+label, legend { font-weight: 600; }
+
+input[type="search"],
+input[type="text"],
+input[type="email"] {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  min-height: 44px;
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 2px solid var(--dark-pink);
+  border-radius: 12px;
+}
+input[aria-invalid="true"] { border-color: var(--fucsia); border-width: 3px; }
+
+.hint { margin: 0.25rem 0 0; font-size: 0.9rem; }
+
+.result-count { font-weight: 600; margin: 1rem 0; }
+
+/* Buttons – rounded like the style guide */
+.btn {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.6rem 1.5rem;
+  border: 0;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+}
+.btn-primary { background: var(--fucsia); color: var(--light-brown); }   /* Sign up: 6.20:1 */
+.btn-primary:hover { text-decoration: underline; }
+#dialog-close { background: var(--dark-blue); color: var(--light-brown); } /* Close: 4.76:1 */
+
+/* Results */
+.results {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--light-blue);
+  color: var(--text);
+  border: 2px solid var(--dark-pink);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  order: -1;
+  background: var(--light-brown);
+}
+.card-body { padding: 0.75rem 1rem 1rem; }
+.card h3 { margin: 0 0 0.25rem; }
+.card-open {
+  background: none;
+  border: 0;
+  padding: 0;
+  min-height: 24px;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.card-open:hover { color: var(--fucsia); }
+.card .brand { margin: 0; }
+
+.save-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: var(--light-blue);
+  color: var(--fucsia);   /* heart: 5.78:1 on Light blue */
+  cursor: pointer;
+}
+.save-btn svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; }
+.save-btn[aria-pressed="true"] { background: var(--pink); }
+.save-btn[aria-pressed="true"] svg { fill: currentColor; }
+
+
+.no-results { margin: 0; }
+
+/* Dialog */
+dialog {
+  width: min(560px, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  padding: 0;
+  border: 2px solid var(--dark-pink);
+  border-radius: 16px;
+  background: var(--bg);
+  color: var(--text);
+}
+dialog::backdrop { background: rgba(0, 0, 0, 0.75); }
+.dialog-inner { padding: 1.5rem; }
+dialog img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0 0 1rem;
+}
+dt { font-weight: 600; }
+dd { margin: 0; }
+
+/* Sign-up form */
+.field { margin-bottom: 1.25rem; }
+fieldset {
+  border: 2px solid var(--dark-pink);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  max-width: 28rem;
+}
+.radio, .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 32px;
+}
+input[type="radio"], input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  accent-color: var(--dark-blue);
+}
+.error {
+  color: var(--fucsia);
+  font-weight: 600;
+  margin: 0.25rem 0 0;
+}
+.form-status { font-weight: 600; color: var(--text); }
+.form-status:not(:empty) { background: var(--light-blue); padding: 0.75rem 1rem; border-radius: 12px; }
+
+/* Footer */
+.site-footer {
+  background: var(--dark-brown);
+  color: var(--text);
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+.site-footer p { margin: 0; }
+
+@media (forced-colors: active) {
+  .save-btn[aria-pressed="true"] svg { fill: CanvasText; }
+}
