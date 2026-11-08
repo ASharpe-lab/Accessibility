@@ -1,4 +1,4 @@
-
+# Accessibility spec: Luxury Bag Finder
 ## 1. Heading outline
 
 - h1: Luxury Bag Finder

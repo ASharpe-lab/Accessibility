@@ -9,7 +9,7 @@ JavaScript without frameworks. Put all files in the folder I tell you to work in
   folder you work in, and load the data from there.
 - There are 8 handbags. Each one has: `id`, `name`, `brand`, `year`,
   `country`, `material`, `image`, `alt` and `description`.
-
+  
 
 ## Style
 
